@@ -6,8 +6,8 @@ import api from './../../services/api';
 import './styles.css';
 
 interface PokemonData {
-  name: string,
-  url: string,
+  name?: string,
+  url?: string,
   imageUrl?: string,
   id?: number,
 }
@@ -72,7 +72,7 @@ const Main = () => {
       <div className="button-elements">
       <button onClick={() => {
         if (page[0] !== page[1]) {
-          listPokemons(page[0])
+          listPokemons(page[0]);
         }
       }}>
       <strong>Previous</strong>
@@ -82,7 +82,7 @@ const Main = () => {
     <div className="button-elements">
       <button onClick={() => { 
         if (page[1] !== "pokemon") {
-          listPokemons("pokemon")
+          listPokemons("pokemon");
         }
     }}>
       <strong>Home</strong>
@@ -92,7 +92,8 @@ const Main = () => {
     <div className="button-elements">
       <button onClick={() => { 
         if (page[2] !== page[1]) {
-          listPokemons(page[2]) 
+          listPokemons(page[2]); 
+          console.log(page[2]);
         }
         }}>
       <strong>Next</strong>
